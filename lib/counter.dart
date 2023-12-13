@@ -7,4 +7,9 @@ class CounterNotifier extends ChangeNotifier {
     _counter++;
     notifyListeners();
   }
+
+  void decrement() {
+    _counter--;
+    notifyListeners();
+  }
 }

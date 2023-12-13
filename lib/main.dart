@@ -44,6 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     final counterData = Provider.of<CounterNotifier>(context, listen: false);
+
     print('Running my app');
     return Scaffold(
       appBar: AppBar(
@@ -66,10 +67,23 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: counterData.increment,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(left: 160),
+        child: Row(
+          children: [
+            FloatingActionButton(
+              onPressed: counterData.increment,
+              tooltip: 'Increment',
+              child: const Icon(Icons.add),
+            ),
+            SizedBox(width: 10),
+            FloatingActionButton(
+              onPressed: () => counterData.decrement(),
+              tooltip: "-remove",
+              child: Icon(Icons.remove),
+            )
+          ],
+        ),
       ),
     );
   }
