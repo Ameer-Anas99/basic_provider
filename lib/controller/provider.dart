@@ -19,4 +19,22 @@ class ProviderNotifier with ChangeNotifier {
     provider = "Value Changed";
     notifyListeners();
   }
+
+  Color circleAvatarColor = Colors.green;
+
+  pink() {
+    circleAvatarColor = Colors.pink;
+    notifyListeners();
+  }
+
+  purple() {
+    circleAvatarColor = Colors.purple;
+    ;
+    notifyListeners();
+  }
+
+  yellow() {
+    circleAvatarColor = Colors.yellow;
+    notifyListeners();
+  }
 }
