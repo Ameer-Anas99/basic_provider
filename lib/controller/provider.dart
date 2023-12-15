@@ -37,4 +37,21 @@ class ProviderNotifier with ChangeNotifier {
     circleAvatarColor = Colors.yellow;
     notifyListeners();
   }
+
+  int currentIndex = 0;
+
+  List<Color> colors = [
+    Colors.red,
+    Colors.teal,
+    Colors.purple,
+    Colors.indigo,
+    Colors.red,
+    Colors.orange
+  ];
+
+  void color() {
+    currentIndex = (currentIndex + 1) % colors.length;
+    // currentIndex++;
+    notifyListeners();
+  }
 }
